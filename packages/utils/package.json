@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "@lyi-app/utils",
   "version": "0.0.1",
   "description": "",
   "author": "Yi Lu <luyi985@gmail.com>",
@@ -23,5 +23,6 @@
   },
   "bugs": {
     "url": "https://github.com/luyi985/lyi-app/issues"
-  }
+  },
+  "gitHead": "982efbaa785233f041f2a2ba4698f428688dd433"
 }

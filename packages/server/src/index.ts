@@ -1,3 +1,3 @@
-// import { add } from "utils";
+import { add } from "@lyi-app/utils";
 
-// console.log(add(1, 1));
+console.log(add(1, 1));
