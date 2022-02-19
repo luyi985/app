@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/luyi985/lyi-app/issues"
   },
-  "gitHead": "982efbaa785233f041f2a2ba4698f428688dd433"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "c8610b714d4ea58a82027326603db0dc02ee440e"
 }
