@@ -1,5 +1,5 @@
 {
-  "name": "@lyi-app/server",
+  "name": "@lyi-sdk/server",
   "version": "0.0.4",
   "description": "> TODO: description",
   "author": "Yi Lu <luyi985@gmail.com>",
@@ -25,10 +25,10 @@
     "url": "https://github.com/luyi985/lyi-app/issues"
   },
   "dependencies": {
-    "@lyi-app/utils": "^0.0.4"
+    "@lyi-sdk/utils": "^0.0.4"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "87a063963a9f10c9928cc74c9b8f2c5e962c6e27"
+  "gitHead": "aadd2da92cfae5a1537d500e0f20667fc9ef7a60"
 }
