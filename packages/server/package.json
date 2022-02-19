@@ -1,6 +1,6 @@
 {
   "name": "@lyi-app/server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "> TODO: description",
   "author": "Yi Lu <luyi985@gmail.com>",
   "homepage": "https://github.com/luyi985/lyi-app/tree/main/packages/server#readme",
@@ -25,9 +25,9 @@
     "url": "https://github.com/luyi985/lyi-app/issues"
   },
   "dependencies": {
-    "@lyi-app/utils": "^0.0.2"
+    "@lyi-app/utils": "^0.0.3"
   },
-   "publishConfig": {
+  "publishConfig": {
     "access": "public"
   },
   "gitHead": "c8610b714d4ea58a82027326603db0dc02ee440e"
