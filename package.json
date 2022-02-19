@@ -1,0 +1,33 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./packages/*/lib",
+    "build": "npm run clean && lerna run tsc",
+    "publish": "npm run build && lerna publish",
+    "start:prod": "node ./packages/server/lib/index.js"
+
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "lerna": "^4.0.0",
+    "typescript": "^4.5.5"
+  },
+  "description": "",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luyi985/lyi-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luyi985/lyi-app/issues"
+  },
+  "homepage": "https://github.com/luyi985/lyi-app#readme"
+}
