@@ -21,13 +21,13 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luyi985/lyi-app.git"
+    "url": "git+https://github.com/luyi985/lyi-sdk.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luyi985/lyi-app/issues"
+    "url": "https://github.com/luyi985/lyi-sdk/issues"
   },
-  "homepage": "https://github.com/luyi985/lyi-app#readme"
+  "homepage": "https://github.com/luyi985/lyi-sdk#readme"
 }

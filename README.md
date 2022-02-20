@@ -1,4 +1,4 @@
-# app
+# lyi-sdk
 ## Tech Stack
  - nodejs
  - apollo-graphql
