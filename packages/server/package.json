@@ -1,6 +1,6 @@
 {
   "name": "@lyi-sdk/server",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "> TODO: description",
   "author": "Yi Lu <luyi985@gmail.com>",
   "private": "true",
@@ -26,7 +26,7 @@
     "url": "https://github.com/luyi985/lyi-sdk/issues"
   },
   "dependencies": {
-    "@lyi-sdk/utils": "^0.0.5"
+    "@lyi-sdk/utils": "^0.0.6"
   },
   "publishConfig": {
     "access": "public"
