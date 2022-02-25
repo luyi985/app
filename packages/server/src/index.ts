@@ -1,3 +1,3 @@
-import { add } from "@lyi-sdk/utils";
+const env = process.env;
 
-console.log(add(1, 1));
+console.log(env);
