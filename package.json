@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./packages/*/lib",
     "build": "npm run clean && lerna run tsc",
+    "watch": "lerna run watch",
     "publish": "npm run build && lerna publish",
     "start:prod": "node ./packages/server/lib/index.js"
 
