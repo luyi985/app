@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 services:
   postgres:
     image: postgres:14.2-alpine
@@ -11,11 +11,11 @@ services:
     working_dir: /server
     volumes:
       - ./packages/server/lib:/server/lib
-      - ./packages/server/package.json:/server/package.json
       - lyi-sdk-server-vol:/server/node_modules
     env_file: .env
     ports:
       - 3000-3005:3000-3005
-    entrypoint: ['tail', '-f', '/dev/null']
+      - 80:80
+    entrypoint: ['npm', 'run', 'dev']
 volumes:
   lyi-sdk-server-vol:
