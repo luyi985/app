@@ -10,7 +10,8 @@
     "build": "npm run clean && lerna run tsc",
     "publish": "npm run build && lerna publish",
     "watch": "lerna run watch",
-    "start": "docker compose build && docker compose up -d && npm run watch"
+    "start": "docker compose build && docker compose up -d && npm run watch",
+    "down": "docker compose down"
   },
   "devDependencies": {
     "@types/node": "^17.0.18",
