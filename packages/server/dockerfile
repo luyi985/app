@@ -1,4 +1,4 @@
 FROM node:17-alpine3.14
 COPY . /server
 WORKDIR /server
-RUN  npm install --include=dev
+RUN ["npm", "i"]
