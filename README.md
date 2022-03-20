@@ -18,11 +18,12 @@
 ## How to setup
 
 - Install
-  npm install &&
-  npm run install-containers
+
+  - npm install && npm run install-containers
 
 - Start Project
-  yarn start
+
+  - yarn start
 
 - Setup Database
   - docker compose exec server /bin/sh
