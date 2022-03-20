@@ -24,7 +24,8 @@
     "dev": "nodemon --watch ./lib ./lib/index.js",
     "watch": "tsc --watch",
     "setupDb": "node ./lib/setup/setupDb.js",
-    "makeSeeds": "node ./lib/setup/seeds.js",
+    "seedCustomers": "node ./lib/setup/seedCustomers.js",
+    "seedContacts": "node ./lib/setup/seedContacts.js",
     "insert": "node ./lib/setup/insert.js",
     "testDb": "node ./lib/setup/testDb.js"
   },

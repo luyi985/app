@@ -24,12 +24,12 @@ CREATE TABLE customers (
  
 CREATE TABLE contacts (
     id SERIAL PRIMARY KEY,
-    email VARCHAR(25) NOT NULL,
+    email VARCHAR(100) NOT NULL,
     countryCode VARCHAR(3),
     mobile VARCHAR(25),
-    facebook VARCHAR(50),
-    twitter VARCHAR(50),
-    linkedIn VARCHAR(50),
+    facebook VARCHAR(100),
+    twitter VARCHAR(100),
+    linkedIn VARCHAR(100),
     customer_id INT NOT NULL,
     UNIQUE(email),
     CONSTRAINT fk_constraint_customer_id

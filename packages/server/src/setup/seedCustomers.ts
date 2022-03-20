@@ -25,12 +25,15 @@ ${new Array(numToMake)
   .join(',')};
 `;
 
-const makeSeeds = () => {
+const makeCustomerSeeds = () => {
   const numToMake = parseInt(process.argv.pop() ?? '10');
   if (isNaN(numToMake)) return;
-  console.log(`To make ${numToMake} seeds`);
+  console.log(`To make ${numToMake} customer seeds`);
   const insertQuery = seedCustomerQuest(numToMake);
-  fs.writeFileSync(path.join(process.cwd(), '/sql/seed.sql'), insertQuery);
+  fs.writeFileSync(
+    path.join(process.cwd(), '/sql/customerSeeds.sql'),
+    insertQuery
+  );
 };
 
-makeSeeds();
+makeCustomerSeeds();
