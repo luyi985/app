@@ -26,8 +26,4 @@
 
 - Setup Database
   - docker compose exec server /bin/sh
-  - npm run setupDb
-  - npm run seedCustomers 10
-  - npm run insert customer
-  - npm run seedContacts
-  - npm run insert contact
+  - npm run setupDB
