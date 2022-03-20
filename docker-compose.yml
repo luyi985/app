@@ -1,0 +1,30 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:14.2-alpine
+    restart: always
+    env_file: .env
+    volumes:
+      - ./.data/postgres:/var/lib/postgresql/data
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  server:
+    build:
+      context: ./packages/server
+      dockerfile: ./dockerfile
+    working_dir: /server
+    volumes:
+      - ./packages/server/sql:/server/sql
+      - ./packages/server/lib:/server/lib
+      - lyi-sdk-server-vol:/server/node_modules
+    env_file: .env
+    ports:
+      - 3000-3005:3000-3005
+      - 80:80
+    #entrypoint: ['tail', '-f', '/dev/null']
+    entrypoint: ['npm', 'run', 'dev']
+volumes:
+  lyi-sdk-server-vol:

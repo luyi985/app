@@ -6,11 +6,13 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "install-containers": "npm run down && docker-compose pull &&  docker compose build",
     "clean": "rm -rf ./packages/*/lib",
     "build": "npm run clean && lerna run tsc",
     "publish": "npm run build && lerna publish",
-    "start:prod": "node ./packages/server/lib/index.js"
-
+    "watch": "lerna run watch",
+    "start": "docker compose up -d && npm run watch",
+    "down": "docker compose down; docker rmi lyi-sdk_server;"
   },
   "devDependencies": {
     "@types/node": "^17.0.18",
