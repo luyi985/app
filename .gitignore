@@ -110,4 +110,5 @@ npm-debug.log
 packages/*/lib
 .idea
 
-.data
+.data/postgres
+.data/rabbit
