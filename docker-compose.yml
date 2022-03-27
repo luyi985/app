@@ -11,6 +11,8 @@ services:
   pgAdmin:
     image: dpage/pgadmin4:latest
     restart: always
+    volumes:
+      - ./.data/pgAdmin:/var/lib/pgadmin
     env_file: .env
     ports:
       - 8081:80

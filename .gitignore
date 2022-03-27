@@ -112,3 +112,4 @@ packages/*/lib
 
 .data/postgres
 .data/rabbit
+.data/pgAdmin
