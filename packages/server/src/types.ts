@@ -1,4 +1,5 @@
 import { Express } from 'express';
+import { Client } from 'pg';
 export type Envs = {
   POSTGRES_PASSWORD: string;
   POSTGRES_USER: string;
@@ -7,9 +8,17 @@ export type Envs = {
   DB_NAME: string;
   SERVER_PORT: number;
 };
-export type SingleService<T> = (envs: Envs) => T;
-export type InstallMiddleware = (app: Express) => void;
 
+export interface SingleService<T, A extends Envs> {
+  getInstance(): T;
+  init(): Promise<void>;
+}
 export type AppContext = {
   envs: Envs;
+  pgClient: Client;
 };
+
+export type ExpressExtended = Express & {
+  context: AppContext;
+};
+export type InstallMiddleware = (app: ExpressExtended) => Promise<void>;

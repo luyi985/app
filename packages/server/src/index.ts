@@ -1,23 +1,20 @@
 import { createServer } from 'http';
 import express from 'express';
-import { AppContext, Envs } from './types';
+import { AppContext, Envs, ExpressExtended } from './types';
 import { installPostgresMiddleware } from './installPostgresMiddleware';
+import { pgService } from './postgresService';
+import { installShowInfoMiddleware } from './installShowInfoMiddleware';
 
-const envs: Envs = process.env as unknown as Envs;
-const appContext: AppContext = { envs };
-const app = express();
-app.set('context', appContext);
-
-app.get('/info', (req, res) => {
-  res.json({ name: 'Server', envs });
-});
-
-installPostgresMiddleware(app);
-
-const httpServer = createServer(app);
-
-const main = () => {
+const main = async () => {
   try {
+    const envs = process.env as unknown as Envs;
+    await pgService.init();
+    const appContext: AppContext = { envs, pgClient: pgService.getInstance() };
+    const app: ExpressExtended = express() as ExpressExtended;
+    app.context = appContext;
+    await installShowInfoMiddleware(app);
+    await installPostgresMiddleware(app);
+    const httpServer = createServer(app);
     httpServer.listen(envs.SERVER_PORT, () => {
       console.info(`server is running at ${envs.SERVER_PORT}`);
     });
