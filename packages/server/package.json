@@ -19,10 +19,10 @@
     "url": "git+https://github.com/luyi985/lyi-sdk.git"
   },
   "scripts": {
-    "tsc": "tsc",
+    "tsc": "tsc --project tsconfig.json",
     "start": "node ./lib/index.js",
-    "dev": "nodemon --watch ./lib ./lib/index.js",
-    "watch": "tsc --watch",
+    "dev": "nodemon --watch ./lib --inspect=0.0.0.0:6001 --nolazy ./lib/index.js",
+    "watch": "tsc --watch --project tsconfig.json",
     "setupDB": "npm run createDb && npm run seedCustomers 10 && npm run insert customer && npm run seedContacts && npm run insert contact",
     "createDb": "node ./lib/setup/createDb.js",
     "seedCustomers": "node ./lib/setup/seedCustomers.js",

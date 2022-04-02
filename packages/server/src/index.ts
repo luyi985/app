@@ -1,15 +1,15 @@
-import { createServer } from "http";
-import express from "express";
-import { AppContext, Envs } from "./types";
-import { installPostgresMiddleware } from "./installPostgresMiddleware";
+import { createServer } from 'http';
+import express from 'express';
+import { AppContext, Envs } from './types';
+import { installPostgresMiddleware } from './installPostgresMiddleware';
 
 const envs: Envs = process.env as unknown as Envs;
 const appContext: AppContext = { envs };
 const app = express();
-app.set("context", appContext);
+app.set('context', appContext);
 
-app.get("/info", (req, res) => {
-  res.json({ name: "Server", envs });
+app.get('/info', (req, res) => {
+  res.json({ name: 'Server', envs });
 });
 
 installPostgresMiddleware(app);

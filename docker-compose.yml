@@ -37,12 +37,14 @@ services:
     volumes:
       - ./packages/server/sql:/server/sql
       - ./packages/server/lib:/server/lib
+      - ./packages/server/package.json:/server/package.json
       - lyi-sdk-server-vol:/server/node_modules
     env_file: .env
     ports:
+      - 6001:6001
       - 3000-3005:3000-3005
       - 80:80
-    #entrypoint: ['tail', '-f', '/dev/null']
+    # entrypoint: ['tail', '-f', '/dev/null']
     entrypoint: ['npm', 'run', 'dev']
     networks:
       - lyi-sdk-network
