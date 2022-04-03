@@ -1,5 +1,5 @@
 import { Express } from 'express';
-import { Client } from 'pg';
+import { Client, PoolClient } from 'pg';
 export type Envs = {
   POSTGRES_PASSWORD: string;
   POSTGRES_USER: string;
@@ -15,7 +15,8 @@ export interface SingleService<T, A extends Envs> {
 }
 export type AppContext = {
   envs: Envs;
-  pgClient: Client;
+  client: Client;
+  pool: PoolClient;
 };
 
 export type ExpressExtended = Express & {

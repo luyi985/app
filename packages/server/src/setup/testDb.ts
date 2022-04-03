@@ -9,8 +9,7 @@ const testDb = async () => {
     const pool = await createPool();
     if (!pool || !pool.query) throw new Error('Failed to get pool');
     const query = getSql('test');
-    await pool.query(query);
-    const res = await pool.query('select * from playground');
+    const res = await pool.query(query);
     console.log(res.rows);
     process.exit(0);
   } catch (e) {
