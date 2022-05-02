@@ -48,61 +48,61 @@ services:
     entrypoint: ['npm', 'run', 'dev']
     networks:
       - lyi-sdk-network
-  postgres-connector:
-    image: debezium/connect
-    container_name: postgres-debezium
-    ports:
-      - 9090:8083
-    env_file: .env
-    depends_on:
-      - kafka
-      - postgres
-    networks:
-      - lyi-sdk-network
-  zookeeper:
-    image: debezium/zookeeper
-    container_name: zookeeper
-    env_file: .env
-    ports:
-      - 2181:2181
-    networks:
-      - lyi-sdk-network
-  kafka:
-    image: debezium/kafka
-    container_name: kafka
-    ports:
-      - '9092:9092'
-      - '9101:9101'
-    env_file: .env
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    hostname: kafka
-    networks:
-      - lyi-sdk-network
-  kowl:
-    image: quay.io/cloudhut/kowl
-    restart: on-failure
-    hostname: kowl
-    env_file: .env
-    volumes:
-      - ./.data/kowl/config.yaml:/etc/kowl/config.yaml
-    ports:
-      - '8083:8080'
-    entrypoint: ./kowl --config.filepath=/etc/kowl/config.yaml
-    depends_on:
-      - kafka
-    networks:
-      - lyi-sdk-network
-  # rabbit:
-  #   image: rabbitmq
-  #   restart: always
-  #   env_file: .env
+  # postgres-connector:
+  #   image: debezium/connect
+  #   container_name: postgres-debezium
   #   ports:
-  #     - 8080:8080
-  #   volumes:
-  #     - ./.data/rabbit:/var/lib/rabbitmq
+  #     - 9090:8083
+  #   env_file: .env
+  #   depends_on:
+  #     - kafka
+  #     - postgres
   #   networks:
   #     - lyi-sdk-network
+  # zookeeper:
+  #   image: debezium/zookeeper
+  #   container_name: zookeeper
+  #   env_file: .env
+  #   ports:
+  #     - 2181:2181
+  #   networks:
+  #     - lyi-sdk-network
+  # kafka:
+  #   image: debezium/kafka
+  #   container_name: kafka
+  #   ports:
+  #     - '9092:9092'
+  #     - '9101:9101'
+  #   env_file: .env
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   hostname: kafka
+  #   networks:
+  #     - lyi-sdk-network
+  # kowl:
+  # image: quay.io/cloudhut/kowl
+  # restart: on-failure
+  # hostname: kowl
+  # env_file: .env
+  # volumes:
+  #   - ./.data/kowl/config.yaml:/etc/kowl/config.yaml
+  # ports:
+  #   - '8083:8080'
+  # entrypoint: ./kowl --config.filepath=/etc/kowl/config.yaml
+  # depends_on:
+  #   - kafka
+  # networks:
+  #   - lyi-sdk-network
+  rabbit:
+    image: rabbitmq
+    restart: always
+    env_file: .env
+    ports:
+      - 8080:8080
+    volumes:
+      - ./.data/rabbit:/var/lib/rabbitmq
+    networks:
+      - lyi-sdk-network
 networks:
   lyi-sdk-network:
 volumes:
